@@ -9,12 +9,12 @@ import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
-/*@Data
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@TableName("employee_info")*/
+@TableName("employee_info")
 public class EmployeeInfo {
-    /*@TableId(type = IdType.AUTO)*/
+    @TableId(type = IdType.AUTO)
     private Integer employeeId;
 
     private String code;

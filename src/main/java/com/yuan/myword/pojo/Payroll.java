@@ -15,13 +15,13 @@ import lombok.Data;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
-/*@ColumnWidth(16)
+@ColumnWidth(16)
 @HeadRowHeight(14)
 @HeadFontStyle(fontHeightInPoints = 11)
 @ExcelIgnoreUnannotated
 @Data
 @AllArgsConstructor
-@NoArgsConstructor*/
+@NoArgsConstructor
 public class Payroll {
 
     private Integer payrollId;

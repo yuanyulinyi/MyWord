@@ -7,10 +7,10 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
-/*@Data
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@TableName("salary_info")*/
+@TableName("salary_info")
 public class SalaryInfo {
     private Integer salaryId;
 
