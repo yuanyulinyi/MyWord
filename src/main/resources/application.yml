@@ -1,0 +1,42 @@
+mybatis:
+    configuration:
+        log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+        map-underscore-to-camel-case: true
+mybatis-plus:
+    mapper-locations: classpath:mapper/*.xml
+    type-aliases-package: com.yuan.myword.pojo
+spring:
+    security:
+        oauth2:
+            client:
+                registration:
+                    github:
+                        client-id: Ov23lihjP4cOkS2WhzmE
+                        client-secret: 62bbaefdcba2a9dad3b38aacae2448d0e2d914c3
+                        redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+                        scope: read:user,user:email
+                        client-name: GitHub
+                provider:
+                    github:
+                        authorization-uri: https://github.com/login/oauth/authorize
+                        token-uri: https://github.com/login/oauth/access_token
+                        user-info-uri: https://api.github.com/user
+                        user-name-attribute: login
+    application:
+        name: MyWord
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/test
+        username: root
+        password: 13792580Nyk&
+jwt:
+    # 设置jwt签名加密时使用的秘钥
+    admin-secret-key: yuan
+    # 设置jwt过期时间（ms）
+    admin-ttl: 3600000
+    # 设置前端传递过来的令牌名称
+    admin-token-name: token
+login:
+    gitee:
+        clientId: cc151419d2ef85a065eed55e9034a78e3784bd9f4395ad0650f3c1d675f5df3a
+        clientSecret: 2e38415bc3c102cf8c71702745c50812d3b0ffeb1a7c3ff71eb07e4d6cacf803

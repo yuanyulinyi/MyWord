@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yuan.myword.mapper.EmployeeMapper">
+
+    <select id="calcSalaryByDept" resultType="java.math.BigDecimal">
+        select sum(p.actual_salary)
+        from payroll p,employee_info e
+        where e.department = #{dept} and
+            p.employee_id = e.employee_id;
+    </select>
+    <select id="calcAllDeptSalary" resultType="java.util.Map" >
+        SELECT e.department, SUM(p.actual_salary) AS total_salary
+        FROM payroll p JOIN employee_info e ON p.employee_id = e.employee_id
+        GROUP BY e.department
+    </select>
+</mapper>
